@@ -1,0 +1,40 @@
+$mycolor: blue;
+$font-stack: Arial, Helvetica, sans-serif;
+$primary-color: #333;
+
+h3 {
+  color: $mycolor;
+}
+
+p{
+  color: purple;
+}
+
+@mixin size {
+  font-size: 1em;
+  font-family: $font-stack;
+  color: salmon;
+}
+
+li {
+  @include size;
+}
+
+li:hover {
+  background-color: blue;
+  text-decoration: underline;
+}
+
+.footer { 
+  background-color: burlywood;
+  text-decoration: underline;
+  color: $primary-color
+}
+
+@mixin transform($property) {
+  -webkit-transform:  $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+h3 { @include transform(rotate(30deg));}
